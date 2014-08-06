@@ -1,5 +1,5 @@
 '''
- *  $Id: Event.scons, 2014-03-07 15:26:06 chi $
+ *  $Id: SConstruct, 2014-08-06 18:16:31 DAMPE $
  *  Author(s):
  *    Chi WANG (chiwang@mail.ustc.edu.cn) 24/07/2013
 '''
@@ -24,6 +24,7 @@ for tmp in os.listdir(includeDir):
 #--------------------------------------------------------------------
 goal=env.SharedLibrary(target,Glob('./src/*.cc'))
 Default(env.InstallAs(prefix+"/lib/lib"+target+".so",goal))
+
 if env['PLATFORM'] == 'darwin':         # MacOs
     Default(env.InstallAs(prefix+"/lib/lib"+target+".dylib",goal))
 
